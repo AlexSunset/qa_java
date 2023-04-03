@@ -13,17 +13,17 @@ public class FelineTest {
     Feline feline = new Feline();
 
     @Test
-    public void getFamilyCorrectReturn(){
+    public void getFamilyCorrectReturn() {
         Assert.assertEquals("Кошачьи", feline.getFamily());
     }
 
     @Test
-    public void getKittensWithParameter(){
+    public void getKittensWithParameter() {
         Assert.assertEquals(3, feline.getKittens(3));
     }
 
     @Test
-    public void getKittensWithoutParameters(){
+    public void getKittensWithoutParameters() {
         feline.getKittens();
         Mockito.verify(feline, Mockito.times(1)).getKittens(1);
     }

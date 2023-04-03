@@ -1,6 +1,5 @@
 import com.example.Cat;
 import com.example.Feline;
-import org.hamcrest.core.AnyOf;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -13,11 +12,11 @@ import static org.junit.Assert.assertEquals;
 public class CatTest {
 
     @Mock
-    Feline feline = new Feline();
+    Feline feline;
 
 
     @Test
-    public void getSoundShouldMyau(){
+    public void getSoundShouldMyau() {
         Cat cat = new Cat(feline);
         assertEquals("Мяу", cat.getSound());
     }
