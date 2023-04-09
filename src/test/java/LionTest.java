@@ -34,17 +34,9 @@ public class LionTest {
     }
 
     @Test
-    public void exceptionAppearOnLionObjectCreate() {
-        Assert.assertThrows(Exception.class, () -> new Lion("Самец", feline));
-    }
-
-    @Test
-    public void correctExceptionTextOnLionObjectCreate() {
-        try {
-            new Lion("Муфаса", feline);
-        } catch (Exception e) {
-            Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка",
-                    e.getMessage());
-        }
+    public void correctExceptionOnLionObjectCreate() {
+        Exception exception = Assert.assertThrows(Exception.class, () -> new Lion(" ", feline));
+        Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка",
+                exception.getMessage());
     }
 }
